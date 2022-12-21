@@ -39,7 +39,6 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   </head>
   <body>
 
@@ -124,12 +123,12 @@
                 </a>
               </span> -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+                <a href="" 
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>arXiv (Coming Soon)</span>
                 </a>
               </span>
               <!-- Video Link. -->
@@ -144,7 +143,7 @@
               </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/microsoft/X-Decoder"
+                <a href="https://github.com/microsoft/X-Decoder" target="_blank" 
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -152,7 +151,6 @@
                   <span>Code</span>
                   </a>
               </span>
-
               <!-- Dataset Link. -->
               <span class="link-block">
                 <a href=""
@@ -161,26 +159,6 @@
                       <i class="far fa-images"></i>
                   </span>
                   <span>Hugging Face Demo</span>
-                  </a>
-              </span>
-
-              <span class="link-block">
-                <a href=""
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Demo Route2</span>
-                  </a>
-              </span>
-
-              <span class="link-block">
-                <a href=""
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Demo Route3</span>
                   </a>
               </span>
 
@@ -205,7 +183,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img id="teaser" width="120%" src="images/xdecoder-teaser.png">
+      <img id="teaser" width="120%" src="images/x-decoder-teaser-project-page.png">
       <h2 class="subtitle has-text-centered">
         X-Decoder is a single model trained to support a wide range of vision and vision-language tasks.
       </h2>
@@ -280,14 +258,14 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present X-Decoder in this project, a generalized decoding model that can predict pixel-level segmentation and language tokens seamlessly. 
-            X-Decoder takes as inputs the visual features from an image encoder and two types of queries: ($i$) generic non-semantic queries and 
+            We present X-Decoder, a generalized decoding pipeline that can predict pixel-level segmentation and language tokens seamlessly. 
+            X-Decoder takes as inputs two types of queries: ($i$) generic non-semantic queries and 
             ($ii$) semantic queries induced from text inputs, to decode different pixel-level and token-level outputs in the same semantic space. With such a novel design, 
-            X-Decoder is the first work that provides a unified way to support all types of image segmentation and a variety of vision-language (VL) tasks. 
-            Further, our design enables seamless interactions across tasks at different granularities and brings mutual benefits by learning a common and rich pixel-level visual-semantic understanding, without any pseudo-labeling. 
-            After pretraining on a mixed set of a limited amount of segmentation data and ten million image-text pairs, X-Decoder exhibits strong transferability to a wide range of downstream tasks in both zero-shot and finetuning settings. Notably, it achieves (1) state-of-the-art results on open-vocabulary segmentation and referring
-            segmentation for nine datasets; (2) better or competitive finetuned performance to other generalist and specialist models on segmentation and VL tasks; 
-            and (3) flexibility for efficient finetuning and novel task composition (e.g., referring captioning = referring segmentation + captioning).
+            <b>X-Decoder is the first work that provides a unified way to support all types of image segmentation and a variety of vision-language (VL) tasks</b>. 
+            After pretraining on a mixed set of a limited amount of segmentation data and million of image-text pairs, X-Decoder exhibits strong transferability to a wide range of downstream tasks in both zero-shot and finetuning settings. 
+            Notably, it achieves <b>(1) state-of-the-art open-vocabulary segmentation and referring
+            segmentation on 10 settings of 7 datasets; (2) better or competitive finetuned performance to other generalist and specialist models on segmentation and VL tasks; 
+            and (3) flexibility for efficient finetuning and novel task composition (e.g., referring captioning = referring segmentation + captioning).</b>
           </p>
         </div>
       </div>
@@ -312,11 +290,36 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
         <h2 class="title is-3">Model</h2>
-        <img id="model" width="100%" src="images/x-decoder-models.png">
-        <br>
-        <br>
+        <div class="content has-text-justified">
+          <p>
+            <b>Our X-Decoder is unique for three critical designs</b>:
+          </p>
+          <ul>
+            <li>It has two types of queries (latent queries and text queries) and outputs (semantic outputs and pixel-level outputs).</li>
+            <li>It uses a single text encoder for all text corpus, ranging from class concepts, referring phrases to image captions.</li>
+            <li>It decouples image and text encoder to accomadate cross-image tasks (e.g., image-text retrieval) and within-image tasks (e.g., segmentation and captioning).</li>
+          </ul>
+        </div>        
+        <img id="model" width="50%" src="images/x-decoder-overall.png">
         <h3 class="subtitle has-text-centered">
-          Unifying four different types of tasks with our proposed X-Decoder.
+          X-Decoder overall architecture.
+        </h3>   
+        <br>
+        <br>
+        <div class="content has-text-justified">
+          <p>
+            <b>X-Decoder can be used to unify a variety of vision and vision-language tasks</b>:
+          </p>
+          <ul>
+            <li><b>Generic Segmentation</b>: Instance, semantic and panoptic segmentation, all supporting open-vocabulary and zero-shot.</li>
+            <li><b>Referring Segmentation</b>: Refer to specific image segment given arbitary textual queries from text encoder. </li>
+            <li><b>Image-Text Retrieval</b>: Decoupled image and text representation extraction and dot-product for computing the similarities. </li>
+            <li><b>Image Captioning</b>: Decode textual tokens using exactly the same decoder in autoregressive manner.</li>
+          </ul>                    
+        </div>          
+        <img id="model" width="100%" src="images/x-decoder-models.png">
+        <h3 class="subtitle has-text-centered">
+          Unify different types of vision and vision-language tasks with a single X-Decoder.
         </h3>        
         </div>
       </div>
@@ -445,35 +448,28 @@
     <!-- Generic Segmentation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Generic Segmentation</h2>
+        <h2 class="title is-3">Zero-Shot Segmentation</h2>
+        <img id="teaser" width="120%" src="images/zero-shot-generic-image-segmentation.png">
+        <h3 class="subtitle has-text-centered">
+          Zero-shot semantic segmentation with pretrained X-Decoder on 10 settings of 7 datasets.
+        </h3>                 
       </div>
     </div>
     <!--/ Generic Segmentation. -->
 
-    <!-- VL Tasks. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Vsion-langauge Tasks</h2>
-      </div>
-    </div>
-    <!--/ VL Tasks. -->
-
-    <!-- Region Retrieval. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Region Retrieval</h2>
-      </div>
-    </div>
-    <!--/ Region Retrieval. -->
-
     <!-- Video Segmentation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Video Segmentation</h2>
+        <h2 class="title is-3">Zero-shot Segmentation for Videos</h2>
         <img id="teaser" width="120%" src="images/zs_video_seg.png">
         <h3 class="subtitle has-text-centered">
-          X-Decoder directly applied to panoptic segmentation for <a href="https://youtube-vos.org/">YouTubeVOS</a> video dataset.
-        </h3>         
+          Zero-shot panoptic segmentation for <a href="https://youtube-vos.org/">YouTubeVOS</a> video dataset.
+        </h3>   
+        <br>
+        <img id="teaser" width="120%" src="images/referring-segmentation.png">
+        <h3 class="subtitle has-text-centered">
+          Zero-shot referring segmentation for <a href="https://youtube-vos.org/">YouTubeVOS</a> video dataset.
+        </h3>                 
       </div>
     </div>
     <!--/ Video Segmentation. -->
@@ -482,15 +478,58 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Segmentation in the Wild</h2>
-        <!-- <div class="hero-body"> -->          
-          <img id="teaser" width="120%" src="images/seginw_examples.png">          
-        <!-- </div>         -->
+        <div class="columns is-centered">          
+          <img id="teaser" width="100%" src="images/seginw_examples.png">          
+        </div>        
         <h3 class="subtitle has-text-centered">
           A curated set of segmentation in the wild datasets from <a href="https://universe.roboflow.com/">Roboflow</a> for a wider evaluation.
-        </h3>           
+        </h3>      
+        <!-- <div class="hero-body"> -->          
+        <img id="teaser" width="120%" src="images/zero-shot-seginw.png">          
+        <!-- </div>         -->
+        <h3 class="subtitle has-text-centered">
+          Zero-shot instance segmentation performance on SeginW benchmark.
+        </h3>                   
       </div>
     </div>
     <!--/ Segmentation in the Wild. -->
+
+    <!-- VL Tasks. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Image Captioning</h2>
+        <img id="teaser" width="120%" src="images/zero-shot-image-captioning-video-images.png">
+        <h3 class="subtitle has-text-centered">
+          Zero-shot image captioning on YoutubeVOS video frames.
+        </h3>            
+      </div>
+    </div>
+    <!--/ VL Tasks. -->
+
+    
+    <!-- Region Captioning. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Referring Image Captioning</h2>
+        <img id="teaser" width="120%" src="images/referring-captioning.png">
+        <h3 class="subtitle has-text-centered">
+          Zero-shot referring image captioning on COCO 2017 val images (pink regions are referred).
+        </h3>            
+      </div>
+    </div>
+    <!--/ Region Captioning. -->
+
+    <!-- Region Editing. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Referring Image Editing</h2>
+        <img id="teaser" width="120%" src="images/referring-image-editing.png">
+        <h3 class="subtitle has-text-centered">
+          Zero-shot referring image editing by combining X-Decoder with Stable Diffusion inpainting.
+        </h3>           
+      </div>
+    </div>
+    <!--/ Region Editing. -->    
 
   </div>
 </section>

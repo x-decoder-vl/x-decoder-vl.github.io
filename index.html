@@ -107,8 +107,13 @@
             <span class="author-block"><sup>*</sup>Equal Technical Contribution, </span>
             <span class="author-block"><sup>&#x2628;</sup>Equal Advisory Contribution, </span>
             <span class="author-block"><sup>&#x2691;</sup>Project Lead </span>
-           
           </div>
+
+          <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><b style="color:#e08ba0; font-weight:normal"> <b>In CVPR2023</b> </b></span>
+          </div>
+
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -122,7 +127,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://github.com/microsoft/X-Decoder" target="_blank" 
+                <a href="https://github.com/microsoft/X-Decoder/tree/main" target="_blank" 
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -132,12 +137,22 @@
               </span>
 
               <span class="link-block">
+                <a href="https://github.com/microsoft/X-Decoder/tree/xgpt"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-hotjar"></i>
+                  </span>
+                  <span>X-GPT</span>
+                  </a>
+              </span>
+
+              <span class="link-block">
                 <a href="https://huggingface.co/spaces/xdecoder/Demo"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="far fa-images"></i>
+                      <i class="far fa-laugh-beam"></i>
                   </span>
-                  <span>HuggingFace All-in-One Demo</span>
+                  <span>All-in-One Demo</span>
                   </a>
               </span>
 
@@ -145,12 +160,21 @@
                 <a href="https://huggingface.co/spaces/xdecoder/Instruct-X-Decoder"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="far fa-images"></i>
+                      <i class="far fa-laugh-beam"></i>
                   </span>
-                  <span>HuggingFace Instruct Demo</span>
+                  <span>Instruct Demo</span>
                   </a>
               </span>
 
+              <span class="link-block">
+                <a href="https://eval.ai/web/challenges/challenge-page/1931/overview"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-tree"></i>
+                  </span>
+                  <span>Challenge</span>
+                  </a>
+              </span>
               
               <span class="link-block">
                 <a href="https://youtu.be/wYp6vmyolqE"
@@ -224,15 +248,29 @@
         <h2 class="title is-3">Demo</h2>
       </div>
     </div>
-    <!-- <h2 class="title is-4">Rerferring Image Editing and Inpainting</h2> -->
+
+    <div class="column is-full-width">
+      <div class="columns is-centered">
+        <img id="teaser" width="90%" src="images/demo6_AdobeExpress.gif">
+      </div>
+      <div class="columns is-centered">
+      <h1>
+        <p style="font-family:Times New Roman"><b>X-GPT: Connecting generalist X-Decoder with GPT-3</b>
+      </h1>                 
+      </div>
+    </div>
+
+    <br>
+
     <div class="column is-full-width">
       <div class="columns is-centered">
         <img id="teaser" width="90%" src="images/inpaint.gif">
       </div>
       <div class="columns is-centered">
       <h1>
-        <p style="font-family:Times New Roman"><b>Referring Image Editing. Left: Object Transfer, Middle: Object/Stuff Removal, Right: Stuff Transfer</b>
+        <p style="font-family:Times New Roman"><b>Instruct-X-Decoder: Object-centric instructional image editing</b>
       </h1>                 
+      </div>
     </div>
 
     <!--/ Paper video. -->
@@ -269,7 +307,7 @@
             <li><b>Image Captioning</b>: Decode textual tokens using exactly the same decoder in autoregressive manner.</li>
           </ul>                    
         </div>          
-        <img id="model" width="100%" src="images/method2.gif">
+        <img id="model" width="100%" src="images/method_2.png">
         <h3 class="subtitle has-text-centered">
           <p style="font-family:Times New Roman"><b>Figure 3. Unify different types of vision and vision-language tasks with a single X-Decoder.</b></p>
         </h3>        
@@ -458,7 +496,7 @@
     <h2 class="title">BibTeX</h2>
     <pre><code>
 @article{zou2022xdecoder,
-  author      = {Zou, Xueyan and Dou, Zi-Yi and Yang, Jianwei and Gan, Zhe and Li, Linjie and Li, Chunyuan and Dai, Xiyang and Wang, Jianfeng and Yuan, Lu and Peng, Nanyun and Wang, Lijuan and Lee, Yong Jae and Gao, Jianfeng},
+  author      = {Zou*, Xueyan and Dou*, Zi-Yi and Yang*, Jianwei and Gan, Zhe and Li, Linjie and Li, Chunyuan and Dai, Xiyang and Wang, Jianfeng and Yuan, Lu and Peng, Nanyun and Wang, Lijuan and Lee^, Yong Jae and Gao^, Jianfeng},
   title       = {Generalized Decoding for Pixel, Image and Language},
   publisher   = {arXiv:2212.11270v1},
   year        = {2022},
